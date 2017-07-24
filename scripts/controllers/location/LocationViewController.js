@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('LocationViewController', ['$scope', '$http', '$routeParams', '$location', 'LocationService',
-    function($scope, $http, $routeParams, $location, LocationService) {
+    function($scope, $http, $routeParams, $location, LocationService) {'use strict';
 
         /**
          * Retrieve a location

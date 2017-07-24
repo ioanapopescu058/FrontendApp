@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('DepartmentListController', ['$scope', '$http', '$route', '$location', 'DepartmentService',
-    function($scope, $http, $route, $location, DepartmentService) {
+    function($scope, $http, $route, $location, DepartmentService) {"use strict";
 
         DepartmentService.findAll().then(function(res) {
             $scope.departments = res.data;

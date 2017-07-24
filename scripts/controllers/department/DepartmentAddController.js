@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('DepartmentAddController', ['$scope', '$http', '$location', 'LocationService', 'DepartmentService',
-    function($scope, $http, $location, LocationService, DepartmentService) {
+    function($scope, $http, $location, LocationService, DepartmentService) { 'use strict';
 
         $scope.department = {};
 
@@ -33,4 +34,4 @@ hrApp.controller('DepartmentAddController', ['$scope', '$http', '$location', 'Lo
             });
         };
 
-}]);
+    }]);

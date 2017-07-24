@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('DepartmentViewController', ['$scope', '$http', '$routeParams', '$location', 'DepartmentService',
-    function($scope, $http, $routeParams, $location, DepartmentService) {
+    function($scope, $http, $routeParams, $location, DepartmentService) { 'use strict';
 
         /**
          * Retrieve a department

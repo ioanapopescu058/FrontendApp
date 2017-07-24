@@ -1,6 +1,4 @@
-'use strict';
-
-hrApp.factory('CommonResourcesFactory', function() {
+hrApp.factory('CommonResourcesFactory', function () {'use strict';
         var baseUrl = "/app/mvc/";
         return {
             findAllDepartmentsUrl: baseUrl + "departments/all",
@@ -13,16 +11,16 @@ hrApp.factory('CommonResourcesFactory', function() {
             findOneLocationUrl: baseUrl + "locations/one/",
             deleteDepartmentUrl: baseUrl + "departments/one/",
             deleteEmployeeUrl: baseUrl + "employees/one/",
-            deleteJobUrl: baseUrl + "jobs",
-            deleteLocationUrl: baseUrl + "locations",
-            addDepartmentUrl: baseUrl + "departments",
-            addEmployeeUrl: baseUrl + "employees",
-            addJobUrl: baseUrl + "jobs",
-            addLocationUrl: baseUrl + "locations",
-            editDepartmentUrl: baseUrl + "departments",
-            editEmployeeUrl: baseUrl + "employees",
-            editJobUrl: baseUrl + "jobs",
-            editLocationUrl: baseUrl + "locations"
+            deleteJobUrl: baseUrl + "jobs/one",
+            deleteLocationUrl: baseUrl + "locations/one",
+            addDepartmentUrl: baseUrl + "departments/create",
+            addEmployeeUrl: baseUrl + "employees/create",
+            addJobUrl: baseUrl + "jobs/create",
+            addLocationUrl: baseUrl + "locations/create",
+            editDepartmentUrl: baseUrl + "departments/edit",
+            editEmployeeUrl: baseUrl + "employees/edit",
+            editJobUrl: baseUrl + "jobs/edit",
+            editLocationUrl: baseUrl + "locations/edit"
         };
     }
 );

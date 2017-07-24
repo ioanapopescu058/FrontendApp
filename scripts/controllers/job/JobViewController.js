@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('JobViewController', ['$scope', '$routeParams', '$location', 'JobService',
-    function($scope, $routeParams, $location, JobService) {
+    function($scope, $routeParams, $location, JobService) {'use strict';
 
         /**
          * Retrieve a job

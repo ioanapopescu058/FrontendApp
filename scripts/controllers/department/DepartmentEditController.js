@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('DepartmentEditController', ['$scope', '$http', '$routeParams', '$filter', '$location', 'LocationService', 'DepartmentService',
-    function($scope, $http, $routeParams, $filter, $location, LocationService, DepartmentService) {
+    function($scope, $http, $routeParams, $filter, $location, LocationService, DepartmentService) {"use strict";
 
         $scope.requiredErrorMessage = 'Please fill out this field';
 

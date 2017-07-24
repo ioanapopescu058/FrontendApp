@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('JobListController', ['$scope', '$http', '$route', '$location', 'JobService',
-    function($scope, $http, $route, $location, JobService) {
+    function($scope, $http, $route, $location, JobService) {'use strict';
 
         JobService.findAll().then(function(res) {
             $scope.jobs = res.data;
@@ -37,4 +38,4 @@ hrApp.controller('JobListController', ['$scope', '$http', '$route', '$location',
                 console.log('An error occurred while deleting job: ' + err.status);
             });
         };
-}]);
+    }]);

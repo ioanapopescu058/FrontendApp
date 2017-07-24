@@ -1,16 +1,14 @@
-'use strict';
-
 hrApp.controller('EmployeeAddController', ['$scope', '$http', '$location', 'DepartmentService', 'JobService', 'EmployeeService',
-    function($scope, $http, $location, DepartmentService, JobService, EmployeeService) {
+    function($scope, $http, $location, DepartmentService, JobService, EmployeeService) { "use strict";
 
         $scope.employee = {};
 
         $scope.datePattern = /^\d{4}-\d{2}-\d{2}$/;
         $scope.commissionPattern = /^[0]\.\d{2}?$/;
 
-        $scope.requiredErrorMessage = 'Please fill out this field';
-        $scope.patternDateNotRespectedMessage = 'The date format should be yyyy-mm-dd';
-        $scope.patternCommisionNotRespectedMessage = 'Commission should be in the format 0.XX';
+        $scope.requiredErrorMessage = "Please fill out this form!";
+        $scope.patternDateNotRespectedMessage = "The date format should be yyyy-mm-dd";
+        $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
 
         DepartmentService.findAll().then(function(res) {
             $scope.departments = res.data;
@@ -29,19 +27,18 @@ hrApp.controller('EmployeeAddController', ['$scope', '$http', '$location', 'Depa
         }, function(err) {
             console.log('An error occurred while finding all managers: ' + err.status);
         });
-
         /**
-         * Reset employee fields
+         * Reset form
          */
-        $scope.reset = function() {
+        $scope.reset = function () {
             this.employee = {};
         };
 
         /**
          * Persist an employee
-         * @param employee - employee to be persisted
+         * @param addEmployee - employee to be persisted
          */
-        $scope.save = function(employee) {
+        $scope.save = function (employee) {
             EmployeeService.add(employee).then(function(res) {
                 $scope.employee = res.data;
                 $location.url('/employeeView/' + $scope.employee.employeeId);

@@ -1,7 +1,9 @@
+// TODO load ngRoute module
+//var hrApp = angular.module('hrApp', []);
 var hrApp = angular.module('hrApp', ['ngRoute']);
 
 hrApp.config(['$routeProvider',
-    function($routeProvider) {
+    function ($routeProvider) { "use strict";
         $routeProvider
             .when('/employeeList', {
                 templateUrl: 'views/employee/employeeList.html',
@@ -72,7 +74,7 @@ hrApp.config(['$routeProvider',
                 controller: 'MainController'
             });
     }]).run(['$rootScope',
-        function($rootScope) {
+        function ($rootScope) {
             // TODO
         }
     ]);

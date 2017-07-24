@@ -1,7 +1,8 @@
-'use strict';
-
+/**
+ * Created by Ioana.Popescu on 7/24/2017.
+ */
 hrApp.controller('LocationListController', ['$scope', '$http', '$route', '$location', 'LocationService',
-    function($scope, $http, $route, $location, LocationService) {
+    function($scope, $http, $route, $location, LocationService) { 'use strict';
 
         LocationService.findAll().then(function(res) {
             $scope.locations = res.data;

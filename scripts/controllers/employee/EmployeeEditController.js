@@ -1,14 +1,12 @@
-'use strict';
-
 hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '$filter', '$location', 'DepartmentService', 'JobService', 'EmployeeService',
-    function($scope, $http, $routeParams, $filter, $location, DepartmentService, JobService, EmployeeService) {
+    function($scope, $http, $routeParams, $filter, $location, DepartmentService, JobService, EmployeeService) { "use strict";
 
         $scope.datePattern = /^\d{4}-\d{2}-\d{2}$/;
-        $scope.commissionPattern = /^[0]\.\d{2}?$/;
+        $scope.commissionPattern =  /^[0]\.\d{1}(\d)?$/;
 
-        $scope.requiredErrorMessage = 'Please fill out this field';
-        $scope.patternDateNotRespectedMessage = 'The date format should be yyyy-mm-dd';
-        $scope.patternCommisionNotRespectedMessage = 'Commission should be in the format 0.XX';
+        $scope.requiredErrorMessage = "Please fill out this form!";
+        $scope.patternDateNotRespectedMessage = "The date format should be yyyy-mm-dd";
+        $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
 
         DepartmentService.findAll().then(function(res) {
             $scope.departments = res.data;
@@ -36,22 +34,22 @@ hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '
         });
 
         /**
-         * Reset employee fields
+         * Reset form
          */
-        $scope.reset = function() {
+        $scope.reset = function () {
             $scope.employee = {};
         };
 
         /**
-         * Update an employee
-         * @param employee - employee to be updated
+         * Persist an employee
+         * @param addEmployee - employee to be persisted
          */
-        $scope.save = function(employee) {
-            EmployeeService.edit(employee).then(function() {
+
+        $scope.save = function (employee) {
+            EmployeeService.edit(employee).then(function () {
                 $location.url('/employeeView/' + $scope.employee.employeeId);
-            }, function(err) {
+            }, function (err) {
                 console.log('An error occurred while editing employee: ' + err.status);
             });
         };
-
     }]);

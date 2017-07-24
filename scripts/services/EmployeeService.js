@@ -1,32 +1,30 @@
-'use strict';
-
-hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function($http, CommonResourcesFactory) {
+hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function ($http, CommonResourcesFactory) { 'use strict';
         return {
-            findAll: function() {
+            findAll: function () {
                 return $http.get(CommonResourcesFactory.findAllEmployeesUrl)
-                    .success(function(data) {
+                    .success(function (data) {
                         return data;
-                    }).error(function(data) {
+                    })
+                    .error(function (data) {
                         return data;
                     });
             },
-            findOne: function(employeeId) {
-                return $http.get(
-                    CommonResourcesFactory.findOneEmployeeUrl, {params: {'employeeId': employeeId}}
+            findOne: function (employeeId) {
+                return $http.get(CommonResourcesFactory.findOneEmployeeUrl, {params: {'employeeId': employeeId}}
                 )
-                    .success(function(data) {
+                    .success(function (data) {
                         return data;
                     })
-                    .error(function(data) {
+                    .error(function (data) {
                         return data;
                     });
             },
             add: function(employee) {
                 return $http.post(CommonResourcesFactory.addEmployeeUrl, employee)
-                    .success(function(data) {
+                    .success(function (data) {
                         return data;
                     })
-                    .error(function(data) {
+                    .error(function (data) {
                         return data;
                     });
             },
@@ -35,19 +33,20 @@ hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function($h
                     .success(function(data) {
                         return data;
                     })
-                    .error(function(data) {
-                        return data;
+                    .error(function (data) {
+                       return data;
                     });
             },
             delete: function(employeeId) {
-                return $http.delete(CommonResourcesFactory.deleteEmployeeUrl, {params: {'employeeId': employeeId}})
-                    .success(function(data) {
+                return $http.delete(CommonResourcesFactory.deleteEmployeeUrl, {params: {'employeeId': employeeId}}
+                )
+                    .success(function (data) {
                         return data;
                     })
-                    .error(function(data) {
+                    .error(function (data) {
                         return data;
                     });
             }
-        }
+        };
     }]
 );
